@@ -16,7 +16,7 @@ module.exports = {
             type: 'testnet',
           }
           break
-        case 'https://rpc.ether1.org/':
+        case 'https://rpc.metamask.io/':
           safeVersionedData.data.config.provider = {
             type: 'mainnet',
           }

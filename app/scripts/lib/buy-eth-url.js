@@ -19,7 +19,15 @@ function getBuyEthUrl ({ network, amount, address }) {
       break
 
     case '3':
-      url = 'https://ether1.org/'
+      url = 'https://faucet.metamask.io/'
+      break
+
+    case '4':
+      url = 'https://www.rinkeby.io/'
+      break
+
+    case '42':
+      url = 'https://github.com/kovan-testnet/faucet'
       break
   }
   return url

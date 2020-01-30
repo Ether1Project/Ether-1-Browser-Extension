@@ -78,7 +78,7 @@ ShapeshiftForm.prototype.renderMain = function () {
         h('i.fa.fa-pencil-square-o.edit-text', {
           style: {
             fontSize: '12px',
-            color: '#7a1336',
+            color: '#F7861C',
             position: 'absolute',
           },
         }),
@@ -95,7 +95,7 @@ ShapeshiftForm.prototype.renderMain = function () {
         //   style: {
         //     bottom: '5px',
         //     left: '5px',
-        //     color: '#7a1336',
+        //     color: '#F7861C',
         //   },
         //   onClick: this.updateCoin.bind(this),
         // }),
@@ -104,7 +104,7 @@ ShapeshiftForm.prototype.renderMain = function () {
             position: 'absolute',
             bottom: '35%',
             left: '0%',
-            color: '#7a1336',
+            color: '#F7861C',
           },
           onClick: this.updateCoin.bind(this),
         }),
@@ -172,7 +172,7 @@ ShapeshiftForm.prototype.renderRefundAddressForCoin = function (coin) {
     h('i.fa.fa-pencil-square-o.edit-text', {
       style: {
         fontSize: '12px',
-        color: '#7a1336',
+        color: '#F7861C',
         position: 'absolute',
       },
     }),

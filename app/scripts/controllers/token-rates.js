@@ -1,5 +1,5 @@
 const ObservableStore = require('obs-store')
-const log = require('loglevel')
+const { warn } = require('loglevel')
 
 // By default, poll every 3 minutes
 const DEFAULT_INTERVAL = 180 * 1000
@@ -26,11 +26,8 @@ class TokenRatesController {
   async updateExchangeRates () {
     if (!this.isActive) { return }
     const contractExchangeRates = {}
-    // copy array to ensure its not modified during iteration
-    const tokens = this._tokens.slice()
-    for (const token of tokens) {
-      if (!token) return log.error(`TokenRatesController - invalid tokens state:\n${JSON.stringify(tokens, null, 2)}`)
-      const address = token.address
+    for (const i in this._tokens) {
+      const address = this._tokens[i].address
       contractExchangeRates[address] = await this.fetchExchangeRate(address)
     }
     this.store.putState({ contractExchangeRates })
@@ -47,7 +44,7 @@ class TokenRatesController {
       const json = await response.json()
       return json && json.length ? json[0].averagePrice : 0
     } catch (error) {
-      log.warn(`MetaMask - TokenRatesController exchange rate fetch failed for ${address}.`, error)
+      warn(`MetaMask - TokenRatesController exchange rate fetch failed for ${address}.`, error)
       return 0
     }
   }

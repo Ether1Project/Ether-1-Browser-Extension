@@ -22,10 +22,7 @@ const mapStateToProps = state => {
     conversionDate,
     nativeCurrency,
     useBlockie,
-    featureFlags: {
-      sendHexData,
-      privacyMode,
-    } = {},
+    featureFlags: { sendHexData } = {},
     provider = {},
     isMascara,
     currentLocale,
@@ -41,7 +38,6 @@ const mapStateToProps = state => {
     nativeCurrency,
     useBlockie,
     sendHexData,
-    privacyMode,
     provider,
     useNativeCurrencyAsPrimaryCurrency,
   }
@@ -59,12 +55,10 @@ const mapDispatchToProps = dispatch => {
       return dispatch(setFeatureFlag('betaUI', false, 'OLD_UI_NOTIFICATION_MODAL'))
     },
     setHexDataFeatureFlag: shouldShow => dispatch(setFeatureFlag('sendHexData', shouldShow)),
-    setPrivacyMode: enabled => dispatch(setFeatureFlag('privacyMode', enabled)),
     showResetAccountConfirmationModal: () => dispatch(showModal({ name: 'CONFIRM_RESET_ACCOUNT' })),
     setUseNativeCurrencyAsPrimaryCurrencyPreference: value => {
       return dispatch(setUseNativeCurrencyAsPrimaryCurrencyPreference(value))
     },
-    showClearApprovalModal: () => dispatch(showModal({ name: 'CLEAR_APPROVED_ORIGINS' })),
   }
 }
 

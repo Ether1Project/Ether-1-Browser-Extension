@@ -1,43 +1,4 @@
 {
-  "privacyMode": {
-    "message": "Privacy Mode"
-  },
-  "privacyModeDescription": {
-    "message": "Websites must request access to view your account information."
-  },
-  "exposeAccounts": {
-    "message": "Expose Accounts"
-  },
-  "exposeDescription": {
-    "message": "Expose accounts to the current website. Useful for legacy dapps."
-  },
-  "confirmExpose": {
-    "message": "Are you sure you want to expose your accounts to the current website?"
-  },
-  "confirmClear": {
-    "message": "Are you sure you want to clear approved websites?"
-  },
-  "clearApprovalDataSuccess": {
-    "message": "Approved website data cleared successfully."
-  },
-  "approvalData": {
-    "message": "Privacy Data"
-  },
-  "approvalDataDescription": {
-    "message": "Clear privacy data so all websites must request access to view account information again."
-  },
-  "clearApprovalData": {
-    "message": "Clear Privacy Data"
-  },
-  "reject": {
-    "message": "Reject"
-  },
-  "providerRequest": {
-    "message": "$1 would like to connect to your account"
-  },
-  "providerRequestInfo": {
-    "message": "This site is requesting access to view your current account address. Always make sure you trust the sites you interact with."
-  },
   "accept": {
     "message": "Accept"
   },
@@ -87,11 +48,11 @@
     "message": "Amount + Gas"
   },
   "appDescription": {
-    "message": "Ether-1 Browser Extension",
+    "message": "Ethereum Browser Extension",
     "description": "The description of the application"
   },
   "appName": {
-    "message": "MetaMask (ETHO Edition)",
+    "message": "MetaMask",
     "description": "The name of the application"
   },
   "approve": {
@@ -209,9 +170,6 @@
   "connect": {
     "message": "Connect"
   },
-  "connectRequest": {
-    "message": "Connect Request"
-  },
   "connecting": {
     "message": "Connecting..."
   },
@@ -219,7 +177,7 @@
     "message": "Connecting to Kovan Test Network"
   },
   "connectingToMainnet": {
-    "message": "Connecting to Main ether-1 Network"
+    "message": "Connecting to Main Ethereum Network"
   },
   "connectingToRopsten": {
     "message": "Connecting to Ropsten Test Network"
@@ -319,7 +277,7 @@
     "message": "Decimals of Precision"
   },
   "defaultNetwork": {
-    "message": "The default network for Ether-1 transactions is Main Net."
+    "message": "The default network for Ether transactions is Main Net."
   },
   "denExplainer": {
     "message": "Your DEN is your password-encrypted storage within MetaMask."
@@ -335,10 +293,10 @@
     "description": "Tells the user what coin they have selected to deposit with shapeshift"
   },
   "depositEth": {
-    "message": "Deposit ETHO"
+    "message": "Deposit Eth"
   },
   "depositEther": {
-    "message": "Deposit Ether-1"
+    "message": "Deposit Ether"
   },
   "depositFiat": {
     "message": "Deposit with Fiat"
@@ -350,7 +308,7 @@
     "message": "Deposit with ShapeShift"
   },
   "depositShapeShiftExplainer": {
-    "message": "If you own other cryptocurrencies, you can trade and deposit Ether-1 directly into your MetaMask wallet. No Account Needed."
+    "message": "If you own other cryptocurrencies, you can trade and deposit Ether directly into your MetaMask wallet. No Account Needed."
   },
   "details": {
     "message": "Details"
@@ -359,10 +317,10 @@
     "message": "Direct Deposit"
   },
   "directDepositEther": {
-    "message": "Directly Deposit Ether-1"
+    "message": "Directly Deposit Ether"
   },
   "directDepositEtherExplainer": {
-    "message": "If you already have some Ether-1, the quickest way to get Ether-1 in your new wallet by direct deposit."
+    "message": "If you already have some Ether, the quickest way to get Ether in your new wallet by direct deposit."
   },
   "done": {
     "message": "Done"
@@ -407,10 +365,10 @@
     "message": "Enter password to continue"
   },
   "eth": {
-    "message": "ETHO"
+    "message": "ETH"
   },
   "etherscanView": {
-    "message": "View account on Ether-1 Explorer"
+    "message": "View account on Etherscan"
   },
   "exchangeRate": {
     "message": "Exchange Rate"
@@ -491,11 +449,11 @@
     "message": "Generating transaction"
   },
   "getEther": {
-    "message": "Get Ether-1"
+    "message": "Get Ether"
   },
   "getEtherFromFaucet": {
     "message": "Get Ether from a faucet for the $1",
-    "description": "Displays network name for Ether-1 faucet"
+    "description": "Displays network name for Ether faucet"
   },
   "getHelp": {
     "message": "Get Help."
@@ -542,10 +500,10 @@
     "message": "History"
   },
   "howToDeposit": {
-    "message": "How would you like to deposit Ether-1?"
+    "message": "How would you like to deposit Ether?"
   },
   "holdEther": {
-    "message": "It allows you to hold ether-1 & tokens, and serves as your bridge to decentralized applications."
+    "message": "It allows you to hold ether & tokens, and serves as your bridge to decentralized applications."
   },
   "import": {
     "message": "Import",
@@ -666,7 +624,7 @@
     "message": "seed words only have lowercase characters"
   },
   "mainnet": {
-    "message": "Main ether-1 Network"
+    "message": "Main Ethereum Network"
   },
   "menu": {
     "message": "Menu"
@@ -675,7 +633,7 @@
     "message": "Message"
   },
   "metamaskDescription": {
-    "message": "MetaMask is a secure identity vault for ether-1."
+    "message": "MetaMask is a secure identity vault for Ethereum."
   },
   "metamaskSeedWords": {
     "message": "MetaMask Seed Words"
@@ -792,10 +750,10 @@
     "message": "You have returned to the old UI. You can switch back to the New UI through the option in the top right dropdown menu."
   },
   "onlySendToEtherAddress": {
-    "message": "Only send ETHO to an ether-1 address."
+    "message": "Only send ETH to an Ethereum address."
   },
   "onlySendTokensToAccountAddress": {
-    "message": "Only send $1 to an ether-1 account address.",
+    "message": "Only send $1 to an Ethereum account address.",
     "description": "displays token symbol"
   },
   "openInTab": {
@@ -901,6 +859,9 @@
   },
   "refundAddress": {
     "message": "Your Refund Address"
+  },
+  "reject": {
+    "message": "Reject"
   },
   "rejectAll": {
     "message": "Reject All"
@@ -1067,7 +1028,7 @@
     "message": "If you don't see your existing Ledger accounts below, try switching paths to \"Legacy (MEW / MyCrypto)\""
   },
   "sendTokensAnywhere": {
-    "message": "Send Tokens to anyone with an ether-1 account"
+    "message": "Send Tokens to anyone with an Ethereum account"
   },
   "settings": {
     "message": "Settings"
@@ -1148,7 +1109,7 @@
     "message": "3. Start using dApps and more!"
   },
   "step3HardwareWalletMsg": {
-    "message": "Use your hardware account like you would with any ether-1 account. Log in to dApps, send Eth, buy and store ERC20 tokens and Non-Fungible tokens like CryptoKitties."
+    "message": "Use your hardware account like you would with any Ethereum account. Log in to dApps, send Eth, buy and store ERC20 tokens and Non-Fungible tokens like CryptoKitties."
   },
   "submit": {
     "message": "Submit"
@@ -1337,7 +1298,7 @@
     "message": "View Account"
   },
   "viewOnEtherscan": {
-    "message": "View on Ether-1 Block explorer"
+    "message": "View on Etherscan"
   },
   "visitWebSite": {
     "message": "Visit our web site"

@@ -85,7 +85,7 @@ ShiftListItem.prototype.renderUtilComponents = function () {
               marginLeft: '23px',
               marginRight: '12px',
               fontSize: '20px',
-              color: '#7a1336',
+              color: '#F7861C',
             },
           }),
         ]),

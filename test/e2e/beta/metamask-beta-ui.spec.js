@@ -271,21 +271,16 @@ describe('MetaMask', function () {
       await driver.wait(until.stalenessOf(accountModal))
       await delay(regularDelayMs)
     })
-  })
+    it('show account details dropdown menu', async () => {
 
-  describe('Enable privacy mode', () => {
-    it('enables privacy mode', async () => {
-      const networkDropdown = await findElement(driver, By.css('.network-name'))
-      await networkDropdown.click()
+      const {width, height} = await driver.manage().window().getSize()
+      driver.manage().window().setSize(320, 480)
+      await driver.findElement(By.css('div.menu-bar__open-in-browser')).click()
+      const options = await driver.findElements(By.css('div.menu.account-details-dropdown div.menu__item'))
+      assert.equal(options.length, 3) // HD Wallet type does not have to show the Remove Account option
       await delay(regularDelayMs)
+      driver.manage().window().setSize(width, height)
 
-      const customRpcButton = await findElement(driver, By.xpath(`//span[contains(text(), 'Custom RPC')]`))
-      await customRpcButton.click()
-      await delay(regularDelayMs)
-
-      const privacyToggle = await findElement(driver, By.css('.settings-page__content-row:nth-of-type(10) .settings-page__content-item-col > div'))
-      await privacyToggle.click()
-      await delay(largeDelayMs * 2)
     })
   })
 
@@ -431,37 +426,24 @@ describe('MetaMask', function () {
   })
 
   describe('Send ETH from dapp', () => {
-    let windowHandles
-    let extension
-    let popup
-    let dapp
-
     it('starts a send transaction inside the dapp', async () => {
       await openNewPage(driver, 'http://127.0.0.1:8080/')
       await delay(regularDelayMs)
 
-      await waitUntilXWindowHandles(driver, 3)
-      windowHandles = await driver.getAllWindowHandles()
+      await waitUntilXWindowHandles(driver, 2)
+      let windowHandles = await driver.getAllWindowHandles()
+      const extension = windowHandles[0]
+      const dapp = windowHandles[1]
 
-      extension = windowHandles[0]
-      popup = await switchToWindowWithTitle(driver, 'MetaMask Notification', windowHandles)
-      dapp = windowHandles.find(handle => handle !== extension && handle !== popup)
-
-      await delay(regularDelayMs)
-      const approveButton = await findElement(driver, By.xpath(`//button[contains(text(), 'Connect')]`))
-      await approveButton.click()
-    })
-
-    it('initiates a send from the dapp', async () => {
       await driver.switchTo().window(dapp)
       await delay(regularDelayMs)
 
       const send3eth = await findElement(driver, By.xpath(`//button[contains(text(), 'Send')]`), 10000)
       await send3eth.click()
-      await delay(5000)
+      await delay(regularDelayMs)
 
       windowHandles = await driver.getAllWindowHandles()
-      await switchToWindowWithTitle(driver, 'MetaMask Notification', windowHandles)
+      await driver.switchTo().window(windowHandles[2])
       await delay(regularDelayMs)
 
       await assertElementNotPresent(webdriver, driver, By.xpath(`//li[contains(text(), 'Data')]`))

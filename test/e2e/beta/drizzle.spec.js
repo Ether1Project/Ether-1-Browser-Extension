@@ -19,7 +19,6 @@ const {
   openNewPage,
   verboseReportOnFailure,
   waitUntilXWindowHandles,
-  switchToWindowWithTitle,
 } = require('./helpers')
 
 describe('MetaMask', function () {
@@ -267,31 +266,17 @@ describe('MetaMask', function () {
   })
 
   describe('Drizzle', () => {
-    let windowHandles
-    let extension
-    let popup
-    let dapp
-
-    it('should be able to connect the account', async () => {
+    it('should be able to detect our eth address', async () => {
       await openNewPage(driver, 'http://127.0.0.1:3000/')
       await delay(regularDelayMs)
 
-      await waitUntilXWindowHandles(driver, 3)
-      windowHandles = await driver.getAllWindowHandles()
+      await waitUntilXWindowHandles(driver, 2)
+      const windowHandles = await driver.getAllWindowHandles()
+      const dapp = windowHandles[1]
 
-      extension = windowHandles[0]
-      popup = await switchToWindowWithTitle(driver, 'MetaMask Notification', windowHandles)
-      dapp = windowHandles.find(handle => handle !== extension && handle !== popup)
-
-      await delay(regularDelayMs)
-      const approveButton = await findElement(driver, By.xpath(`//button[contains(text(), 'Connect')]`))
-      await approveButton.click()
-    })
-
-    it('should be able to detect our eth address', async () => {
-      // Check if address exposed
       await driver.switchTo().window(dapp)
       await delay(regularDelayMs)
+
 
       const addressElement = await findElement(driver, By.css(`.pure-u-1-1 h4`))
       const addressText = await addressElement.getText()

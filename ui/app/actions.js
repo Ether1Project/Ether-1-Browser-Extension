@@ -325,9 +325,6 @@ var actions = {
   clearPendingTokens,
 
   createCancelTransaction,
-  approveProviderRequest,
-  rejectProviderRequest,
-  clearApprovedOrigins,
 }
 
 module.exports = actions
@@ -1877,7 +1874,7 @@ function updateProviderType (type) {
   }
 }
 
-function setRpcTarget (newRpc, chainId, ticker = 'ETHO', nickname = '') {
+function setRpcTarget (newRpc, chainId, ticker = 'ETH', nickname = '') {
   return (dispatch) => {
     log.debug(`background.setRpcTarget: ${newRpc} ${chainId} ${ticker} ${nickname}`)
     background.setCustomRpc(newRpc, chainId, ticker, nickname, (err, result) => {
@@ -2485,23 +2482,5 @@ function setPendingTokens (pendingTokens) {
   return {
     type: actions.SET_PENDING_TOKENS,
     payload: tokens,
-  }
-}
-
-function approveProviderRequest (origin) {
-  return (dispatch) => {
-    background.approveProviderRequest(origin)
-  }
-}
-
-function rejectProviderRequest (origin) {
-  return (dispatch) => {
-    background.rejectProviderRequest(origin)
-  }
-}
-
-function clearApprovedOrigins () {
-  return (dispatch) => {
-    background.clearApprovedOrigins()
   }
 }

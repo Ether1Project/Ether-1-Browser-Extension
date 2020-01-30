@@ -1,11 +1,8 @@
 const Sentry = require('@sentry/browser')
 const METAMASK_DEBUG = process.env.METAMASK_DEBUG
 const extractEthjsErrorMessage = require('./extractEthjsErrorMessage')
-//const SENTRY_DSN_PROD = 'https://3567c198f8a8412082d32655da2961d0@sentry.io/273505'
-//const SENTRY_DSN_DEV = 'https://f59f3dd640d2429d9d0e2445a87ea8e1@sentry.io/273496'
-
-const SENTRY_DSN_PROD = ''
-const SENTRY_DSN_DEV = ''
+const SENTRY_DSN_PROD = 'https://3567c198f8a8412082d32655da2961d0@sentry.io/273505'
+const SENTRY_DSN_DEV = 'https://f59f3dd640d2429d9d0e2445a87ea8e1@sentry.io/273496'
 
 module.exports = setupSentry
 
@@ -14,7 +11,6 @@ function setupSentry (opts) {
   const { release, getState } = opts
   let sentryTarget
   // detect brave
-  /*
   const isBrave = Boolean(window.chrome.ipcRenderer)
 
   if (METAMASK_DEBUG) {
@@ -52,7 +48,7 @@ function setupSentry (opts) {
     }
     return report
   }
-*/
+
   return Sentry
 }
 

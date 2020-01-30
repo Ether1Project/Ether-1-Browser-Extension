@@ -33,7 +33,6 @@ const BuyView = require('./components/buy-button-subview')
 const HDCreateVaultComplete = require('./keychains/hd/create-vault-complete')
 const HDRestoreVaultScreen = require('./keychains/hd/restore-vault')
 const RevealSeedConfirmation = require('./keychains/hd/recover-seed/confirmation')
-const ProviderApproval = require('./provider-approval')
 
 module.exports = connect(mapStateToProps)(App)
 
@@ -50,7 +49,6 @@ function mapStateToProps (state) {
     noActiveNotices,
     seedWords,
     featureFlags,
-    providerRequests,
   } = state.metamask
   const selected = address || Object.keys(accounts)[0]
 
@@ -77,7 +75,6 @@ function mapStateToProps (state) {
     lostAccounts: state.metamask.lostAccounts,
     frequentRpcListDetail: state.metamask.frequentRpcListDetail || [],
     featureFlags,
-    providerRequests,
     suggestedTokens: state.metamask.suggestedTokens,
 
     // state needed to get account dropdown temporarily rendering from app bar
@@ -103,13 +100,13 @@ App.prototype.render = function () {
     : null
   log.debug('Main ui render function')
 
-  /*if (!featureFlags.skipAnnounceBetaUI) {
+  if (!featureFlags.skipAnnounceBetaUI) {
     return (
       h(NewUiAnnouncement, {
         dispatch,
       })
     )
-  }*/
+  }
 
   return (
     h('.flex-column.full-height', {
@@ -150,7 +147,7 @@ App.prototype.renderLoadingIndicator = function ({ isLoading, isLoadingNetwork, 
 App.prototype.renderPrimary = function () {
   log.debug('rendering primary')
   var props = this.props
-  const {isMascara, isOnboarding, providerRequests} = props
+  const {isMascara, isOnboarding} = props
 
   if (isMascara && isOnboarding) {
     return h(MascaraFirstTime)
@@ -216,11 +213,6 @@ App.prototype.renderPrimary = function () {
   if (props.seedWords) {
     log.debug('rendering seed words')
     return h(HDCreateVaultComplete, {key: 'HDCreateVaultComplete'})
-  }
-
-  if (providerRequests && providerRequests.length > 0) {
-    log.debug('rendering provider API approval screen')
-    return h(ProviderApproval, { origin: providerRequests[0].origin })
   }
 
   // show current view
@@ -305,7 +297,7 @@ App.prototype.getNetworkName = function () {
   let name
 
   if (providerName === 'mainnet') {
-    name = 'Main Ether-1 Network'
+    name = 'Main Ethereum Network'
   } else if (providerName === 'ropsten') {
     name = 'Ropsten Test Network'
   } else if (providerName === 'kovan') {

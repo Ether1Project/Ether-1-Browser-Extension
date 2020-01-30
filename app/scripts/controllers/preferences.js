@@ -46,7 +46,7 @@ class PreferencesController {
     this.diagnostics = opts.diagnostics
     this.network = opts.network
     this.store = new ObservableStore(initState)
-    this.openPopup = opts.openPopup
+    this.showWatchAssetUi = opts.showWatchAssetUi
     this._subscribeProviderType()
   }
 // PUBLIC METHODS
@@ -398,7 +398,7 @@ class PreferencesController {
    * @returns {Promise<array>} Promise resolving to updated frequentRpcList.
    *
    */
-  addToFrequentRpcList (url, chainId, ticker = 'ETHO', nickname = '') {
+  addToFrequentRpcList (url, chainId, ticker = 'ETH', nickname = '') {
     const rpcList = this.getFrequentRpcListDetail()
     const index = rpcList.findIndex((element) => { return element.rpcUrl === url })
     if (index !== -1) {
@@ -567,7 +567,7 @@ class PreferencesController {
     }
     const tokenOpts = { rawAddress, decimals, symbol, image }
     this.addSuggestedERC20Asset(tokenOpts)
-    return this.openPopup().then(() => {
+    return this.showWatchAssetUi().then(() => {
       const tokenAddresses = this.getTokens().filter(token => token.address === normalizeAddress(rawAddress))
       return tokenAddresses.length > 0
     })
@@ -583,8 +583,8 @@ class PreferencesController {
    */
   _validateERC20AssetParams (opts) {
     const { rawAddress, symbol, decimals } = opts
-    if (!rawAddress || !symbol || typeof decimals === 'undefined') throw new Error(`Cannot suggest token without address, symbol, and decimals`)
-    if (!(symbol.length < 7)) throw new Error(`Invalid symbol ${symbol} more than six characters`)
+    if (!rawAddress || !symbol || !decimals) throw new Error(`Cannot suggest token without address, symbol, and decimals`)
+    if (!(symbol.length < 6)) throw new Error(`Invalid symbol ${symbol} more than five characters`)
     const numDecimals = parseInt(decimals, 10)
     if (isNaN(numDecimals) || numDecimals > 36 || numDecimals < 0) {
       throw new Error(`Invalid decimals ${decimals} must be at least 0, and not over 36`)

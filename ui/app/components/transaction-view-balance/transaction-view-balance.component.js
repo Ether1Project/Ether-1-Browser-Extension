@@ -37,13 +37,13 @@ export default class TransactionViewBalance extends PureComponent {
             className="transaction-view-balance__primary-balance"
             value={balance}
             type={PRIMARY}
-            ethNumberOfDecimals={4}
+            ethNumberOfDecimals={3}
           />
           <UserPreferencedCurrencyDisplay
             className="transaction-view-balance__secondary-balance"
             value={balance}
             type={SECONDARY}
-            ethNumberOfDecimals={4}
+            ethNumberOfDecimals={3}
           />
         </div>
       )

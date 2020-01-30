@@ -33,24 +33,17 @@ UnlockScreen.prototype.render = function () {
     }, [
       h('.unlock-screen.flex-column.flex-center.flex-grow', [
 
-        /*h(Mascot, {
+        h(Mascot, {
           animationEventEmitter: this.animationEventEmitter,
-        }),*/
-        h('img', {
-          src: "images/icon-512.png",
-          style: {
-            width: "50%",
-            marginBottom: '30px'
-          },
         }),
 
         h('h1', {
           style: {
             fontSize: '1.4em',
             textTransform: 'uppercase',
-            color: '#7a1336',
+            color: '#7F8082',
           },
-        }, 'MetaMask (ETHO Edition)'),
+        }, 'MetaMask'),
 
         h('input.large-input', {
           type: 'password',

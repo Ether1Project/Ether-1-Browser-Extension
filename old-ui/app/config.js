@@ -205,62 +205,6 @@ ConfigScreen.prototype.render = function () {
               marginTop: '20px',
             },
           }, [
-            h('p', {
-              style: {
-                fontFamily: 'Montserrat Light',
-                fontSize: '13px',
-              },
-            }, 'Clear privacy data so all websites must request access to view account information again.'),
-            h('br'),
-            h('button', {
-              style: {
-                alignSelf: 'center',
-              },
-              onClick (event) {
-                event.preventDefault()
-                state.dispatch(actions.clearApprovedOrigins())
-              },
-            }, 'Clear privacy data'),
-          ]),
-
-          h('hr.horizontal-line'),
-
-          h('div', {
-            style: {
-              marginTop: '20px',
-            },
-          }, [
-            h('p', {
-              style: {
-                fontFamily: 'Montserrat Light',
-                fontSize: '13px',
-              },
-            }, metamaskState.featureFlags.privacyMode ?
-              'Websites will be able to view your account information.' :
-              'Websites must request access to view your account information.'
-            ),
-            h('br'),
-            h('button', {
-              style: {
-                alignSelf: 'center',
-              },
-              onClick (event) {
-                event.preventDefault()
-                state.dispatch(actions.setFeatureFlag('privacyMode', !metamaskState.featureFlags.privacyMode))
-              },
-            }, metamaskState.featureFlags.privacyMode ?
-              'Disable privacy mode' :
-              'Enable privacy mode'
-            ),
-          ]),
-
-          h('hr.horizontal-line'),
-
-          h('div', {
-            style: {
-              marginTop: '20px',
-            },
-          }, [
             h('button', {
               style: {
                 alignSelf: 'center',
@@ -311,7 +255,7 @@ ConfigScreen.prototype.render = function () {
   )
 }
 
-function rpcValidation (newRpc, chainid, ticker = 'ETHO', nickname = '', state) {
+function rpcValidation (newRpc, chainid, ticker = 'ETH', nickname = '', state) {
   if (validUrl.isWebUri(newRpc)) {
     state.dispatch(actions.setRpcTarget(newRpc, chainid, ticker, nickname))
   } else {
@@ -353,9 +297,9 @@ function currentProviderDisplay (metamaskState) {
 
     case 'mainnet':
       title = 'Current Network'
-      value = 'Main Ether 1 Network'
+      value = 'Main Ethereum Network'
       break
-/*
+
     case 'ropsten':
       title = 'Current Network'
       value = 'Ropsten Test Network'
@@ -370,7 +314,7 @@ function currentProviderDisplay (metamaskState) {
       title = 'Current Network'
       value = 'Rinkeby Test Network'
       break
-*/
+
     default:
       title = 'Current RPC'
       value = metamaskState.provider.rpcTarget

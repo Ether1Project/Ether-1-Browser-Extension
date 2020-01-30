@@ -76,7 +76,7 @@ BuyButtonSubview.prototype.headerSubview = function () {
             paddingTop: '4px',
             paddingBottom: '4px',
           },
-        }, 'Buy Ether-1'),
+        }, 'Buy Eth'),
       ]),
 
       // loading indication

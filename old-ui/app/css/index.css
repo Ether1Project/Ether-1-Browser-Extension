@@ -14,7 +14,7 @@ application specific styles
 }
 
 html, body {
-  font-family: 'Roboto', Helvetica;
+  font-family: 'Montserrat Regular', Arial;
   color: #4D4D4D;
   font-weight: 300;
   line-height: 1.4em;
@@ -77,8 +77,8 @@ button, input[type="submit"] {
   transform-origin: center center;
   transition: transform 50ms ease-in;
   /* default orange */
-  background: rgba(122,19,54, 1);
-  box-shadow: 0px 3px 6px rgba(122,19,54, 0.36);
+  background: rgba(247, 134, 28, 1);
+  box-shadow: 0px 3px 6px rgba(247, 134, 28, 0.36);
 }
 
 .btn-green, input[type="submit"].btn-green {
@@ -131,19 +131,19 @@ app
 
 button.primary {
   padding: 8px 12px;
-  background: #7a1336;
-  box-shadow: 0px 3px 6px rgba(122,19,54, 0.36);
+  background: #F7861C;
+  box-shadow: 0px 3px 6px rgba(247, 134, 28, 0.36);
   color: white;
   font-size: 1.1em;
-  font-family: 'Roboto';
+  font-family: 'Montserrat Regular';
   text-transform: uppercase;
 }
 
 button.btn-thin {
   border: 1px solid;
-  border-color: #7a1336;
-  color: #FFF;
-  background: rgb(122,19,54);
+  border-color: #4D4D4D;
+  color: #4D4D4D;
+  background: rgb(255, 174, 41);
   border-radius: 4px;
   min-width: 200px;
   margin: 12px 0;
@@ -156,13 +156,13 @@ button.btn-thin {
 }
 
 .app-header h1 {
-  font-family: 'Roboto';
+  font-family: 'Montserrat Regular';
   text-transform: uppercase;
   color: #AEAEAE;
 }
 
 h2.page-subtitle {
-  font-family: 'Roboto';
+  font-family: 'Montserrat Regular';
   text-transform: uppercase;
   color: #AEAEAE;
   font-size: 1em;
@@ -206,7 +206,7 @@ textarea.twelve-word-phrase {
 
 .check {
   margin-left: 12px;
-  color: #7a1336;
+  color: #F7861C;
   flex: 1 0 auto;
   display: flex;
   justify-content: flex-end;
@@ -220,7 +220,7 @@ app sections
 .initialize-screen hr {
   width: 60px;
   margin: 12px;
-  border-color: #7a1336;
+  border-color: #F7861C;
   border-style: solid;
 }
 
@@ -239,16 +239,16 @@ app sections
 
 /* unlock */
 .error {
-  color: #7a1336;
+  color: #f7861c;
   margin-bottom: 9px;
 }
 
 .warning {
-  color: #7a1336;
+  color: #FFAE00;
 }
 
 .dropped {
-  color: #7a1336;
+  color: #6195ED;
 }
 
 .lock {
@@ -277,11 +277,11 @@ app sections
 }
 .lock.unlocked:hover {
   border-radius: 4px;
-  background: #7a1336;
-  border: 1px solid #7a1336;
+  background: #e5e5e5;
+  border: 1px solid #b1b1b1;
 }
 .lock.unlocked:active {
-  background: #7a1336;
+  background: #c3c3c3;
 }
 
 .section-title .fa-arrow-left {
@@ -421,14 +421,14 @@ input.large-input {
 }
 
 .identity-section .identity-panel {
-  background: #7a1336;
-  border-bottom: 1px solid #7a1336;
+  background: #E9E9E9;
+  border-bottom: 1px solid #B1B1B1;
   cursor: pointer;
 }
 
 .identity-section .identity-panel.selected {
   background: white;
-  color: #7a1336;
+  color: #F3C83E;
 }
 
 .identity-section .identity-panel.selected .identicon {
@@ -466,8 +466,8 @@ input.large-input {
 .unapproved-tx-icon {
   height: 16px;
   width: 16px;
-  background: rgb(122,19,54);
-  border-color: #7a1336;
+  background: rgb(47, 174, 244);
+  border-color: #AEAEAE;
   border-radius: 13px;
 }
 
@@ -482,7 +482,7 @@ input.large-input {
   margin-bottom: 2px;
   font-size: 11px;
   text-rendering: geometricPrecision;
-  color: #7a1336;
+  color: #F7861C;
 }
 .name-label:hover .edit-text {
   visibility: visible;
@@ -495,8 +495,8 @@ input.large-input {
   margin: 12px;
   margin-bottom: 24px;
   border-radius: 4px;
-  border: 2px solid #7a1336;
-  background: #7a1336;
+  border: 2px solid #F3C83E;
+  background: #FAF6F0;
 }
 
 /* Send Screen */
@@ -517,16 +517,16 @@ input.large-input {
 /* Ether Balance Widget */
 
 .ether-balance-amount {
-  color: #7a1336;
+  color: #F7861C;
 }
 
 .ether-balance-label {
-  color: #7a1336;
+  color: #ABA9AA;
 }
 
 /* Info screen */
 .info-gray{
-  font-family: 'Roboto', Helvetica;
+  font-family: 'Montserrat Regular';
   text-transform: uppercase;
   color: #AEAEAE;
 }
@@ -536,7 +536,7 @@ input.large-input {
 }
 
 .info{
-  font-family: 'Roboto', Helvetica;
+  font-family: 'Montserrat Regular', Arial;
   padding-bottom: 10px;
   display: inline-block;
   padding-left: 5px;
@@ -556,8 +556,8 @@ input.large-input {
   border-style: double;
   border-radius: 15px;
   border-width: 5px;
-  background: rgba(122,19,54,1)
-  border-color: #7a1336;
+  background: rgba(247, 134, 28, 1);
+  border-color: #F7F7F7;
 }
 
 .custom-radio-inactive {
@@ -570,7 +570,7 @@ input.large-input {
 }
 
 .radio-titles {
-  color: rgba(122,19,54, 1);
+  color: rgba(247, 134, 28, 1);
 }
 
 .radio-titles-subtext {
@@ -598,7 +598,7 @@ input.large-input {
 }
 
 .buy-inputs{
-  font-family: 'Roboto';
+  font-family: 'Montserrat Light';
   font-size: 13px;
   height: 20px;
   background: transparent;
@@ -612,14 +612,14 @@ input.large-input {
 .input-container:hover .buy-inputs{
   box-sizing: inherit;
   border: solid;
-  border-color: #7a1336;
+  border-color: #F7861C;
   border-width: 0.5px;
   border-radius: 2px;
 }
 
 .buy-inputs:focus{
   border: solid;
-  border-color: #7a1336;
+  border-color: #F7861C;
   border-width: 0.5px;
   border-radius: 2px;
 }
@@ -643,7 +643,7 @@ input.large-input {
 }
 
 .ex-coins {
-  font-family: 'Roboto';
+  font-family: 'Montserrat Regular';
   text-transform: uppercase;
   text-align: center;
   font-size: 33px;
@@ -654,7 +654,7 @@ input.large-input {
 }
 
 .marketinfo{
-  font-family: 'Roboto';
+  font-family: 'Montserrat light';
   color: #AEAEAE;
   font-size: 15px;
   line-height: 17px;
@@ -696,7 +696,7 @@ input.large-input {
   text-overflow: ellipsis;
   width: 5em;
   font-size: 14px;
-  font-family: "Roboto";
+  font-family: "Montserrat Light";
   margin-left: 5px;
 }
 
@@ -707,7 +707,7 @@ input.large-input {
 
 .qr-message {
   font-size: 12px;
-  color: #7a1336;
+  color: #F7861C;
 }
 
 div.message-container > div:first-child {
@@ -725,8 +725,8 @@ div.message-container > div:first-child {
   flex-direction: column;
   height: 100%;
   background: white;
-  color: #7a1336;
-  font-family: "Roboto", Helvetica, sans-serif;
+  color: #4D4D4D;
+  font-family: Roboto, Arial, sans-serif;
   padding: 1.5rem;
 }
 

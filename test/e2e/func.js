@@ -56,31 +56,23 @@ async function setupBrowserAndExtension ({ browser, extPath }) {
   return { driver, extensionId, extensionUri }
 }
 
-function buildChromeWebDriver (extPath, opts = {}) {
+function buildChromeWebDriver (extPath) {
   const tmpProfile = fs.mkdtempSync(path.join(os.tmpdir(), 'mm-chrome-profile'))
-  const args = [
-    `load-extension=${extPath}`,
-    `user-data-dir=${tmpProfile}`,
-  ]
-  if (opts.responsive) {
-    args.push('--auto-open-devtools-for-tabs')
-  }
   return new webdriver.Builder()
     .withCapabilities({
       chromeOptions: {
-        args,
+        args: [
+          `load-extension=${extPath}`,
+          `user-data-dir=${tmpProfile}`,
+        ],
         binary: process.env.SELENIUM_CHROME_BINARY,
       },
     })
     .build()
 }
 
-function buildFirefoxWebdriver (opts = {}) {
-  const driver = new webdriver.Builder().build()
-  if (opts.responsive) {
-    driver.manage().window().setSize(320, 600)
-  }
-  return driver
+function buildFirefoxWebdriver () {
+  return new webdriver.Builder().build()
 }
 
 async function getExtensionIdChrome (driver) {

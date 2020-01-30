@@ -71,7 +71,7 @@ EthBalanceComponent.prototype.renderBalance = function (value) {
         style: {
           alignItems: 'flex-end',
           lineHeight: '13px',
-          fontFamily: 'Roboto',
+          fontFamily: 'Montserrat Light',
           textRendering: 'geometricPrecision',
         },
       }, [
